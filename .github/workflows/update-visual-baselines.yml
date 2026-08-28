@@ -2,6 +2,10 @@ name: Update visual baselines
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/update-visual-baselines.yml
 
 permissions:
   contents: read
