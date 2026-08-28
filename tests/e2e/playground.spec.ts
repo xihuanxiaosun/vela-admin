@@ -58,19 +58,35 @@ test('navigates, opens centered overlays, and exposes feedback through one API h
   await expect(toast).toHaveScreenshot('success-toast.png')
   await toast.getByRole('button').click()
 
+  // Freeze the indeterminate spinner before it enters the DOM so runner load cannot affect pixels.
+  await page.addStyleTag({
+    content: `
+      .va-global-loading-host,
+      .va-global-loading-host *,
+      .va-global-loading-host *::before,
+      .va-global-loading-host *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+
+      .va-global-loading-host .v-progress-circular--indeterminate > svg {
+        transform: none !important;
+      }
+
+      .va-global-loading-host .v-progress-circular--indeterminate .v-progress-circular__overlay {
+        transform: rotate(-90deg) !important;
+      }
+
+      .va-global-loading-host .v-progress-circular__overlay {
+        stroke-dasharray: 25, 200 !important;
+        stroke-dashoffset: 0 !important;
+      }
+    `,
+  })
   await page.getByRole('button', { name: 'Global API' }).click()
   const loadingStatus = page.locator('.va-global-loading-host__status')
   await expect(loadingStatus).toBeVisible()
   await expect(loadingStatus).toContainText('Preparing your workspace')
-  await page.addStyleTag({
-    content: `
-      .va-global-loading-host .v-progress-circular--indeterminate > svg,
-      .va-global-loading-host .v-progress-circular--indeterminate .v-progress-circular__overlay {
-        animation: none !important;
-        transition: none !important;
-      }
-    `,
-  })
   await expect(loadingStatus).toHaveScreenshot('global-loading-status.png')
   await page.clock.fastForward(1_200)
   await expect(loadingStatus).toBeHidden()
