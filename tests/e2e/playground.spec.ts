@@ -48,7 +48,7 @@ test('navigates, opens centered overlays, and exposes feedback through one API h
   await page.getByRole('button', { name: 'Cancel' }).click()
   await expect(page.getByRole('dialog', { name: 'Create workspace' })).toBeHidden()
 
-  await page.clock.install()
+  await page.clock.install({ time: new Date('2026-08-27T12:00:00.000Z') })
   await page.getByRole('button', { name: 'Success', exact: true }).click()
   const toast = page.locator('.v-snackbar__wrapper').filter({ hasText: 'Record saved' })
   await expect(toast).toBeVisible()
@@ -62,6 +62,15 @@ test('navigates, opens centered overlays, and exposes feedback through one API h
   const loadingStatus = page.locator('.va-global-loading-host__status')
   await expect(loadingStatus).toBeVisible()
   await expect(loadingStatus).toContainText('Preparing your workspace')
+  await page.addStyleTag({
+    content: `
+      .va-global-loading-host .v-progress-circular--indeterminate > svg,
+      .va-global-loading-host .v-progress-circular--indeterminate .v-progress-circular__overlay {
+        animation: none !important;
+        transition: none !important;
+      }
+    `,
+  })
   await expect(loadingStatus).toHaveScreenshot('global-loading-status.png')
   await page.clock.fastForward(1_200)
   await expect(loadingStatus).toBeHidden()
@@ -175,6 +184,7 @@ test('switches every Playground surface and framework control to Simplified Chin
   const commandPalette = page.getByRole('dialog', { name: '搜索导航' })
   await expect(commandPalette.getByRole('textbox', { name: '搜索页面和操作' })).toBeFocused()
   await page.keyboard.press('Escape')
+  await expect(commandPalette).toBeHidden()
 
   await page.getByRole('link', { name: '组件', exact: true }).click()
   await expect(page.getByRole('heading', { name: '以意图组织组件' })).toBeVisible()
@@ -199,6 +209,7 @@ test('switches every Playground surface and framework control to Simplified Chin
   await expect(userDialog.getByText('身份信息', { exact: true })).toBeVisible()
   await expect(userDialog.getByRole('button', { name: '保存修改' })).toBeVisible()
   await page.keyboard.press('Escape')
+  await expect(userDialog).toBeHidden()
 
   await page.getByRole('link', { name: '自适应数据页', exact: true }).click()
   await expect(page.getByRole('textbox', { name: '搜索' })).toBeVisible()
@@ -393,6 +404,7 @@ test('composes finance and moderation records from reusable semantic cells', asy
   const settings = page.getByRole('dialog', { name: 'Workspace settings' })
   await settings.getByRole('button', { name: 'Dark' }).click()
   await page.keyboard.press('Escape')
+  await expect(settings).toBeHidden()
   await expect(moderation).toHaveScreenshot('moderation-semantic-workspace-dark.png')
 
   const results = await new AxeBuilder({ page }).include('main').analyze()
@@ -562,6 +574,7 @@ test('uploads, previews and preprocesses images through the shared media surface
   const appearance = page.getByRole('dialog', { name: '工作区设置' })
   await appearance.getByRole('button', { name: '深色' }).click()
   await page.keyboard.press('Escape')
+  await expect(appearance).toBeHidden()
   await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }))
   await expect(page).toHaveScreenshot('upload-workflows-dark-zh.png', { fullPage: true })
 

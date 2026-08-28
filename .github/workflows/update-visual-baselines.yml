@@ -25,8 +25,9 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm exec playwright install --with-deps chromium
-      - run: pnpm test:e2e:update
+      - run: pnpm exec playwright test --update-snapshots --workers=1
       - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
         with:
           name: visual-baselines-linux
           path: tests/e2e/**/*-snapshots/*-linux.png
