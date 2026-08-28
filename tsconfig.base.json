@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    "allowImportingTsExtensions": true,
+    "allowJs": false,
+    "allowSyntheticDefaultImports": true,
+    "exactOptionalPropertyTypes": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "lib": ["ES2023", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "paths": {
+      "@vela-admin/access": ["./packages/access/src/index.ts"],
+      "@vela-admin/adapters": ["./packages/adapters/src/index.ts"],
+      "@vela-admin/contracts": ["./packages/contracts/src/index.ts"],
+      "@vela-admin/data": ["./packages/data/src/index.ts"],
+      "@vela-admin/forms": ["./packages/forms/src/index.ts"],
+      "@vela-admin/locale": ["./packages/locale/src/index.ts"],
+      "@vela-admin/shell": ["./packages/shell/src/index.ts"],
+      "@vela-admin/testing": ["./packages/testing/src/index.ts"],
+      "@vela-admin/theme": ["./packages/theme/src/index.ts"],
+      "@vela-admin/ui": ["./packages/ui/src/index.ts"],
+      "@vela-admin/upload": ["./packages/upload/src/index.ts"]
+    },
+    "noEmit": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noUncheckedIndexedAccess": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "ES2023",
+    "useDefineForClassFields": true,
+    "verbatimModuleSyntax": true
+  }
+}

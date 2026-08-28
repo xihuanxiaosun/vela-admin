@@ -1,0 +1,46 @@
+{
+  "name": "@vela-admin/adapters",
+  "version": "0.0.0",
+  "license": "MIT",
+  "description": "Backend-neutral pagination, response, transport, auth, permission, and storage adapters.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xihuanxiaosun/vela-admin.git",
+    "directory": "packages/adapters"
+  },
+  "homepage": "https://github.com/xihuanxiaosun/vela-admin#readme",
+  "bugs": {
+    "url": "https://github.com/xihuanxiaosun/vela-admin/issues"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "vite build",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "dependencies": {
+    "@vela-admin/contracts": "workspace:*"
+  },
+  "devDependencies": {
+    "vite": "catalog:",
+    "vite-plugin-dts": "catalog:"
+  }
+}

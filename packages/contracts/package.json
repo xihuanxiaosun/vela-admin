@@ -1,0 +1,43 @@
+{
+  "name": "@vela-admin/contracts",
+  "version": "0.0.0",
+  "license": "MIT",
+  "description": "Framework-agnostic contracts and state models for Vela Admin Kit.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xihuanxiaosun/vela-admin.git",
+    "directory": "packages/contracts"
+  },
+  "homepage": "https://github.com/xihuanxiaosun/vela-admin#readme",
+  "bugs": {
+    "url": "https://github.com/xihuanxiaosun/vela-admin/issues"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "vite build",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "devDependencies": {
+    "vite": "catalog:",
+    "vite-plugin-dts": "catalog:"
+  }
+}

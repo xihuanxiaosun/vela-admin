@@ -1,0 +1,158 @@
+:root {
+  color-scheme: light dark;
+  font-family: var(--v-font-family-sans);
+  --v-runtime-surface-opacity: 1;
+  font-synthesis: none;
+  font-optical-sizing: auto;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html[data-vela-font-scale='small'] {
+  font-size: var(--v-root-font-size-small);
+}
+
+html[data-vela-font-scale='default'] {
+  font-size: var(--v-root-font-size-default);
+}
+
+html[data-vela-font-scale='large'] {
+  font-size: var(--v-root-font-size-large);
+}
+
+html[data-vela-contrast='high'] .v-application {
+  --v-border-opacity: var(--v-contrast-border-opacity);
+  --v-medium-emphasis-opacity: var(--v-contrast-medium-emphasis-opacity);
+  --v-high-emphasis-opacity: var(--v-contrast-high-emphasis-opacity);
+}
+
+html[data-vela-motion='reduced'] *,
+html[data-vela-motion='reduced'] *::before,
+html[data-vela-motion='reduced'] *::after {
+  scroll-behavior: auto !important;
+  transition-duration: var(--v-motion-duration-none) !important;
+  animation-duration: var(--v-motion-duration-none) !important;
+  animation-iteration-count: 1 !important;
+}
+
+html {
+  background: rgb(var(--v-theme-background));
+  overflow-y: auto;
+}
+
+body {
+  min-inline-size: 20rem;
+  margin: 0;
+  background: rgb(var(--v-theme-background));
+  color: rgb(var(--v-theme-on-background));
+  font-family: var(--v-font-family-sans);
+  font-size: var(--v-font-size-md);
+  line-height: var(--v-line-height-body);
+}
+
+::selection {
+  color: rgb(var(--v-theme-on-primary));
+  background: rgba(var(--v-theme-primary), var(--v-pressed-opacity));
+}
+
+.v-btn {
+  font-weight: var(--v-font-weight-medium);
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.v-input .v-field--variant-outlined {
+  background: rgba(var(--v-theme-surface), var(--v-control-surface-opacity));
+  transition:
+    background-color var(--v-motion-duration-fast) var(--v-motion-easing-standard),
+    box-shadow var(--v-motion-duration-fast) var(--v-motion-easing-standard);
+}
+
+.v-input:not(.v-input--disabled) .v-field--variant-outlined:hover {
+  --v-field-border-opacity: var(--v-control-hover-border-opacity);
+}
+
+.v-input.v-input--error .v-field--variant-outlined.v-field--focused {
+  box-shadow: var(--v-control-error-shadow);
+}
+
+.v-field .v-label {
+  font-size: var(--v-font-size-sm);
+  font-weight: var(--v-font-weight-medium);
+  letter-spacing: 0;
+}
+
+.v-field__input {
+  font-size: var(--v-font-size-md);
+}
+
+.v-input__details,
+.v-messages {
+  font-size: var(--v-font-size-xs);
+}
+
+.v-card,
+.v-menu > .v-overlay__content,
+.v-autocomplete__content,
+.v-select__content {
+  transition:
+    border-color var(--v-motion-duration-fast) var(--v-motion-easing-standard),
+    box-shadow var(--v-motion-duration-fast) var(--v-motion-easing-standard);
+}
+
+html[data-vela-skin='default'] .v-card {
+  box-shadow: var(--v-shadow-card);
+}
+
+html[data-vela-skin='bordered'] .v-card {
+  border: 1px solid rgba(var(--v-border-color), var(--v-border-opacity));
+  box-shadow: none;
+}
+
+.v-menu > .v-overlay__content,
+.v-autocomplete__content,
+.v-select__content {
+  overflow: hidden;
+  border: 1px solid rgba(var(--v-border-color), var(--v-border-opacity));
+  border-radius: var(--v-radius-lg);
+  box-shadow: var(--v-shadow-overlay);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:focus-visible {
+  outline: var(--v-focus-outline-width) solid rgb(var(--v-theme-primary));
+  outline-offset: 0.125rem;
+}
+
+/* Outlined Vuetify fields already expose focus on the field boundary. Native
+   inputs inside that boundary must not paint a second, nested rectangle. */
+.v-field :is(input, textarea, [contenteditable='true']):focus-visible {
+  outline: none;
+}
+
+html[data-vela-contrast='high'] :focus-visible {
+  outline-width: var(--v-focus-outline-width-high);
+}
+
+/* Vuetify focuses the dialog content container to establish its focus trap.
+   The container is not interactive, so only controls inside it need a ring. */
+.v-dialog > .v-overlay__content[tabindex='-1']:focus-visible {
+  outline: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: var(--v-motion-duration-none) !important;
+    animation-duration: var(--v-motion-duration-none) !important;
+    animation-iteration-count: 1 !important;
+  }
+}

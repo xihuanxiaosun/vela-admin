@@ -1,0 +1,55 @@
+{
+  "name": "@vela-admin/access",
+  "version": "0.0.0",
+  "license": "MIT",
+  "description": "Backend-neutral authentication state, permissions, access boundaries, and Vue Router guards for Vela Admin Kit.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xihuanxiaosun/vela-admin.git",
+    "directory": "packages/access"
+  },
+  "homepage": "https://github.com/xihuanxiaosun/vela-admin#readme",
+  "bugs": {
+    "url": "https://github.com/xihuanxiaosun/vela-admin/issues"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "vite build",
+    "typecheck": "vue-tsc -p tsconfig.json --noEmit"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "peerDependencies": {
+    "vue": "^3.5.0",
+    "vue-router": ">=4.6.0 <6.0.0"
+  },
+  "dependencies": {
+    "@vela-admin/contracts": "workspace:*"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "catalog:",
+    "@vue/compiler-sfc": "catalog:",
+    "vite": "catalog:",
+    "vite-plugin-dts": "catalog:",
+    "vue": "catalog:",
+    "vue-router": "catalog:",
+    "vue-tsc": "catalog:"
+  }
+}

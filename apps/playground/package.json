@@ -1,0 +1,33 @@
+{
+  "name": "@vela-admin/playground",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite --host 0.0.0.0",
+    "preview": "vite preview --host 0.0.0.0",
+    "typecheck": "vue-tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@fontsource-variable/inter": "catalog:",
+    "@mdi/js": "catalog:",
+    "@vela-admin/adapters": "workspace:*",
+    "@vela-admin/contracts": "workspace:*",
+    "@vela-admin/data": "workspace:*",
+    "@vela-admin/forms": "workspace:*",
+    "@vela-admin/locale": "workspace:*",
+    "@vela-admin/shell": "workspace:*",
+    "@vela-admin/theme": "workspace:*",
+    "@vela-admin/ui": "workspace:*",
+    "@vela-admin/upload": "workspace:*",
+    "vue": "catalog:",
+    "vuetify": "catalog:"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "catalog:",
+    "@vue/compiler-sfc": "catalog:",
+    "vite": "catalog:",
+    "vue-tsc": "catalog:"
+  }
+}

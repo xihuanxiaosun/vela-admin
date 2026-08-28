@@ -1,0 +1,81 @@
+{
+  "name": "vela-admin-kit",
+  "version": "0.0.0",
+  "private": true,
+  "description": "A polished, extensible Vuetify administration framework for Vue applications.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xihuanxiaosun/vela-admin.git"
+  },
+  "homepage": "https://github.com/xihuanxiaosun/vela-admin#readme",
+  "bugs": {
+    "url": "https://github.com/xihuanxiaosun/vela-admin/issues"
+  },
+  "type": "module",
+  "license": "MIT",
+  "packageManager": "pnpm@10.33.4",
+  "engines": {
+    "node": ">=22.12.0",
+    "pnpm": ">=10.0.0"
+  },
+  "scripts": {
+    "build": "pnpm -r --if-present build",
+    "check": "pnpm format:check && pnpm lint && pnpm typecheck && pnpm test:coverage && pnpm build && pnpm check:packages && pnpm check:consumer && pnpm test:e2e",
+    "check:security": "pnpm audit --audit-level high",
+    "check:consumer": "node tooling/scripts/smoke-packed-consumer.mjs",
+    "check:packages": "node tooling/scripts/audit-packages.mjs",
+    "dev": "pnpm run starter:dev",
+    "starter:dev": "pnpm --filter @vela-admin/starter dev",
+    "starter:build": "pnpm --filter @vela-admin/starter build",
+    "starter:preview": "pnpm --filter @vela-admin/starter preview",
+    "starter:typecheck": "pnpm --filter @vela-admin/starter typecheck",
+    "playground:dev": "pnpm --filter @vela-admin/playground dev",
+    "docs:dev": "pnpm --filter @vela-admin/docs dev",
+    "docs:build": "pnpm --filter @vela-admin/docs build",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint . --max-warnings=0",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "test:e2e": "playwright test",
+    "test:e2e:install": "playwright install chromium",
+    "test:e2e:update": "playwright test --update-snapshots",
+    "test:watch": "vitest",
+    "typecheck": "pnpm -r --if-present typecheck",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "pnpm check && pnpm check:security && changeset publish",
+    "release:status": "pnpm check:packages && node tooling/scripts/check-release-status.mjs"
+  },
+  "devDependencies": {
+    "@changesets/cli": "catalog:",
+    "@axe-core/playwright": "catalog:",
+    "@eslint/js": "catalog:",
+    "@types/node": "catalog:",
+    "@playwright/test": "catalog:",
+    "@vitejs/plugin-vue": "catalog:",
+    "@vitest/coverage-v8": "catalog:",
+    "@vue/test-utils": "catalog:",
+    "@vue/server-renderer": "catalog:",
+    "eslint": "catalog:",
+    "eslint-config-prettier": "catalog:",
+    "eslint-plugin-vue": "catalog:",
+    "globals": "catalog:",
+    "happy-dom": "catalog:",
+    "prettier": "catalog:",
+    "typescript": "catalog:",
+    "typescript-eslint": "catalog:",
+    "vite": "catalog:",
+    "vite-plugin-dts": "catalog:",
+    "vitepress": "catalog:",
+    "vitest": "catalog:",
+    "vue": "catalog:",
+    "vue-tsc": "catalog:",
+    "vuetify": "catalog:"
+  },
+  "pnpm": {
+    "overrides": {
+      "vitepress>vite": "6.4.3"
+    }
+  }
+}

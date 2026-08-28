@@ -1,0 +1,61 @@
+{
+  "name": "@vela-admin/ui",
+  "version": "0.0.0",
+  "license": "MIT",
+  "description": "Semantic controls, overlays, feedback, and state views for Vela Admin Kit.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xihuanxiaosun/vela-admin.git",
+    "directory": "packages/ui"
+  },
+  "homepage": "https://github.com/xihuanxiaosun/vela-admin#readme",
+  "bugs": {
+    "url": "https://github.com/xihuanxiaosun/vela-admin/issues"
+  },
+  "type": "module",
+  "sideEffects": [
+    "**/*.css",
+    "**/*.scss"
+  ],
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./styles.css": "./dist/style.css"
+  },
+  "scripts": {
+    "build": "vite build",
+    "typecheck": "vue-tsc -p tsconfig.json --noEmit"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "peerDependencies": {
+    "vue": "^3.5.0",
+    "vuetify": "^4.1.0"
+  },
+  "dependencies": {
+    "@vela-admin/contracts": "workspace:*",
+    "@vela-admin/locale": "workspace:*",
+    "@vela-admin/theme": "workspace:*"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "catalog:",
+    "@vue/compiler-sfc": "catalog:",
+    "vite": "catalog:",
+    "vite-plugin-dts": "catalog:",
+    "vue": "catalog:",
+    "vue-tsc": "catalog:",
+    "vuetify": "catalog:"
+  }
+}
