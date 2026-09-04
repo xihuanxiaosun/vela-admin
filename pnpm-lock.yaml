@@ -91,8 +91,8 @@ catalogs:
       specifier: 3.3.11
       version: 3.3.11
     vuetify:
-      specifier: 4.1.11
-      version: 4.1.11
+      specifier: 4.1.12
+      version: 4.1.12
 
 overrides:
   vitepress>vite: 6.4.3
@@ -172,7 +172,7 @@ importers:
         version: 3.3.11(typescript@6.0.3)
       vuetify:
         specifier: 'catalog:'
-        version: 4.1.11(typescript@6.0.3)(vue@3.5.41(typescript@6.0.3))
+        version: 4.1.12(typescript@6.0.3)(vue@3.5.41(typescript@6.0.3))
 
   apps/docs:
     devDependencies:
@@ -220,7 +220,7 @@ importers:
         version: 3.5.41(typescript@6.0.3)
       vuetify:
         specifier: 'catalog:'
-        version: 4.1.11(typescript@6.0.3)(vue@3.5.41(typescript@6.0.3))
+        version: 4.1.12(typescript@6.0.3)(vue@3.5.41(typescript@6.0.3))
     devDependencies:
       '@vitejs/plugin-vue':
         specifier: 'catalog:'
@@ -275,7 +275,7 @@ importers:
         version: 4.6.4(vue@3.5.41(typescript@6.0.3))
       vuetify:
         specifier: 'catalog:'
-        version: 4.1.11(typescript@6.0.3)(vue@3.5.41(typescript@6.0.3))
+        version: 4.1.12(typescript@6.0.3)(vue@3.5.41(typescript@6.0.3))
     devDependencies:
       '@vitejs/plugin-vue':
         specifier: 'catalog:'
@@ -375,7 +375,7 @@ importers:
         version: 3.3.11(typescript@6.0.3)
       vuetify:
         specifier: 'catalog:'
-        version: 4.1.11(typescript@6.0.3)(vue@3.5.41(typescript@6.0.3))
+        version: 4.1.12(typescript@6.0.3)(vue@3.5.41(typescript@6.0.3))
 
   packages/forms:
     dependencies:
@@ -409,7 +409,7 @@ importers:
         version: 3.3.11(typescript@6.0.3)
       vuetify:
         specifier: 'catalog:'
-        version: 4.1.11(typescript@6.0.3)(vue@3.5.41(typescript@6.0.3))
+        version: 4.1.12(typescript@6.0.3)(vue@3.5.41(typescript@6.0.3))
 
   packages/locale:
     devDependencies:
@@ -433,7 +433,7 @@ importers:
         version: 3.3.11(typescript@6.0.3)
       vuetify:
         specifier: 'catalog:'
-        version: 4.1.11(typescript@6.0.3)(vue@3.5.41(typescript@6.0.3))
+        version: 4.1.12(typescript@6.0.3)(vue@3.5.41(typescript@6.0.3))
 
   packages/shell:
     dependencies:
@@ -473,7 +473,7 @@ importers:
         version: 3.3.11(typescript@6.0.3)
       vuetify:
         specifier: 'catalog:'
-        version: 4.1.11(typescript@6.0.3)(vue@3.5.41(typescript@6.0.3))
+        version: 4.1.12(typescript@6.0.3)(vue@3.5.41(typescript@6.0.3))
 
   packages/testing:
     dependencies:
@@ -514,7 +514,7 @@ importers:
         version: 3.5.41(typescript@6.0.3)
       vuetify:
         specifier: 'catalog:'
-        version: 4.1.11(typescript@6.0.3)(vue@3.5.41(typescript@6.0.3))
+        version: 4.1.12(typescript@6.0.3)(vue@3.5.41(typescript@6.0.3))
 
   packages/ui:
     dependencies:
@@ -548,7 +548,7 @@ importers:
         version: 3.3.11(typescript@6.0.3)
       vuetify:
         specifier: 'catalog:'
-        version: 4.1.11(typescript@6.0.3)(vue@3.5.41(typescript@6.0.3))
+        version: 4.1.12(typescript@6.0.3)(vue@3.5.41(typescript@6.0.3))
 
   packages/upload:
     dependencies:
@@ -585,7 +585,7 @@ importers:
         version: 3.3.11(typescript@6.0.3)
       vuetify:
         specifier: 'catalog:'
-        version: 4.1.11(typescript@6.0.3)(vue@3.5.41(typescript@6.0.3))
+        version: 4.1.12(typescript@6.0.3)(vue@3.5.41(typescript@6.0.3))
 
 packages:
 
@@ -2757,8 +2757,8 @@ packages:
       typescript:
         optional: true
 
-  vuetify@4.1.11:
-    resolution: {integrity: sha512-pMzGsjha58Lbg9n/icMXCxcQN9rTczcOdMq3wMU1Qe+cfufl28eX4VUUzLwSsDgmLjTtUGsgZIkyYZFQy+SmIw==}
+  vuetify@4.1.12:
+    resolution: {integrity: sha512-WXGbnuzqUGPZM7nF38C3jiucaLRutHZOICVW0wg1dyXppW11i+su/IT20nK+1o86nsgTdedejeEv53cJUrI30A==}
     peerDependencies:
       typescript: '>=4.7'
       vite-plugin-vuetify: '>=2.1.0'
@@ -4975,7 +4975,7 @@ snapshots:
     optionalDependencies:
       typescript: 6.0.3
 
-  vuetify@4.1.11(typescript@6.0.3)(vue@3.5.41(typescript@6.0.3)):
+  vuetify@4.1.12(typescript@6.0.3)(vue@3.5.41(typescript@6.0.3)):
     dependencies:
       vue: 3.5.41(typescript@6.0.3)
     optionalDependencies:
